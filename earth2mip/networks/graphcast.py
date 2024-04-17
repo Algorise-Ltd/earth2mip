@@ -612,11 +612,11 @@ def load_stepper(
     print("Forcings:", eval_forcings.dims.mapping)
 
     # load stats
-    with open(os.path.join(stats_dir, "diffs_stddev_by_level.nc"), "rb") as f:
+    with open(os.path.join(stats_dir, "stats" ,"diffs_stddev_by_level.nc"), "rb") as f:
         diffs_stddev_by_level = xarray.load_dataset(f).compute()
-    with open(os.path.join(stats_dir, "mean_by_level.nc"), "rb") as f:
+    with open(os.path.join(stats_dir, "stats" , "mean_by_level.nc"), "rb") as f:
         mean_by_level = xarray.load_dataset(f).compute()
-    with open(os.path.join(stats_dir, "stddev_by_level.nc"), "rb") as f:
+    with open(os.path.join(stats_dir, "stats" , "stddev_by_level.nc"), "rb") as f:
         stddev_by_level = xarray.load_dataset(f).compute()
 
     # jit the stuff
